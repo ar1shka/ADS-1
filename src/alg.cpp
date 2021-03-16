@@ -6,5 +6,6 @@ for (int i = 1; i< size; i++) {
 if (arr[i] == value) m = m+1;
 }
 return m;
+else
 return 0;
 }
