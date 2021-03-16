@@ -1,12 +1,24 @@
 // Copyright 2021 NNTU-CS
 
 int cbinsearch(int *arr, int size, int value) {
-int m = 0;
-for (int i = 0; i< size; i++) {
-if (arr[i] == value) m = m+1;
+int point = 0;
+int f = 0;
+int m = size - 1;
+while (point < m) {
+int b = (point + m) / 2;
+if (arr[b] < value)
+point = b + 1;
+else
+m = b;
 }
-if (m<>0)
-return m;
+if (arr[point] == value) {
+while (arr[point] == value) {
+f++;
+point++;
+}
+}
+if (f)
+return f;
 else
 return 0;
 }
